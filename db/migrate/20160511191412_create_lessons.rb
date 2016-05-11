@@ -4,6 +4,7 @@ class CreateLessons < ActiveRecord::Migration
       t.string :lesson_code
       t.references :teacher, index: true, foreign_key: true
       t.references :student, index: true, foreign_key: true
+      t.references :homework, index: true, foreign_key: true
 
       t.timestamps null: false
     end
