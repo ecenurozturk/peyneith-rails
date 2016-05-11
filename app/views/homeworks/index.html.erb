@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Homeworks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>Subject</th>
+      <th>Content</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homeworks.each do |homework| %>
+      <tr>
+        <td><%= homework.lesson %></td>
+        <td><%= homework.subject %></td>
+        <td><%= homework.content %></td>
+        <td><%= homework.start_time %></td>
+        <td><%= homework.end_time %></td>
+        <td><%= link_to 'Show', homework %></td>
+        <td><%= link_to 'Edit', edit_homework_path(homework) %></td>
+        <td><%= link_to 'Destroy', homework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homework', new_homework_path %>

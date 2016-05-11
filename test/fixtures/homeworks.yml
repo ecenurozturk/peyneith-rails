@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lesson_id: 
+  subject: MyString
+  content: MyText
+  start_time: 2016-05-11 22:19:40
+  end_time: 2016-05-11 22:19:40
+
+two:
+  lesson_id: 
+  subject: MyString
+  content: MyText
+  start_time: 2016-05-11 22:19:40
+  end_time: 2016-05-11 22:19:40
