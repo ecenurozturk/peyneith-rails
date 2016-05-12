@@ -1,1 +1,28 @@
-<h2>Test</h2>
+<% if current_user.is_teacher == 1 %>
+  Your students falan filan
+<% else %>
+<h2>Welcome <%= Student.find_by(school_number: current_user.school_number).name %>!</h2>
+Your Student Number: <%= current_user.school_number %>
+<h3>Your Lessons</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Lesson code</th>
+      <th>Teacher</th>
+      <th>Student Count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.lesson_code %></td>
+        <td><%= lesson.teacher_name %></td>
+        <td><%= lesson.students.count %></td>
+        <td><%= link_to 'Show', lesson %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

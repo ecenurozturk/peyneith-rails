@@ -7,7 +7,7 @@
     <tr>
       <th>Lesson code</th>
       <th>Teacher</th>
-      <th>Student</th>
+      <th>Student Count</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @lessons.each do |lesson| %>
       <tr>
         <td><%= lesson.lesson_code %></td>
-        <td><%= lesson.teacher %></td>
-        <td><%= lesson.student %></td>
+        <td><%= lesson.teacher_name %></td>
+        <td><%= lesson.students.count %></td>
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
