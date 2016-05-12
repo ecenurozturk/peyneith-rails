@@ -1,6 +1,4 @@
-<% if current_user.is_teacher == 1 %>
-  Your students falan filan
-<% else %>
+<% if Student.where(school_number: current_user.school_number).any? %>
 <h2>Welcome <%= Student.find_by(school_number: current_user.school_number).name %>!</h2>
 Your Student Number: <%= current_user.school_number %>
 <h3>Your Lessons</h3>
