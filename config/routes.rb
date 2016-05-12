@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+  devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :homeworks
   resources :students
