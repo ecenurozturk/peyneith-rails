@@ -28,14 +28,9 @@ ActiveRecord::Schema.define(version: 20160511194723) do
   create_table "lessons", force: :cascade do |t|
     t.string   "lesson_code"
     t.string   "teacher_name"
-    t.integer  "student_id"
-    t.integer  "homework_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
-
-  add_index "lessons", ["homework_id"], name: "index_lessons_on_homework_id"
-  add_index "lessons", ["student_id"], name: "index_lessons_on_student_id"
 
   create_table "lessons_students", force: :cascade do |t|
     t.integer "lesson_id"
