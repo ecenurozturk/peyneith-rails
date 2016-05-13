@@ -19,7 +19,7 @@
           <td><%= lesson.lesson_code %></td>
           <td><%= lesson.teacher_name %></td>
           <td><%= lesson.students.count %></td>
-          <td><%= link_to 'Show', lesson %></td>
+          <td><%= link_to 'Show', lesson,  {:class => 'button'} %></td>
         </tr>
       <% end %>
     </tbody>

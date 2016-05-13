@@ -13,11 +13,20 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require trix
 
  */
 @import 'foundation-icons';
 @import 'foundation_and_overrides';
+@import 'trix';
 
+.a {
+  padding: 0;
+}
+
+a:visited {
+     color: inherit !important;
+}
 
 .footer {
   background-color: #2199E8;
@@ -81,7 +90,6 @@
     list-style: none;
     font-weight: normal;
     color: #fff;
-    padding: 3rem 0 2rem;
     margin: 0;
     font-size: 0.875rem;
 

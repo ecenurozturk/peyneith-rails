@@ -2,7 +2,7 @@
 
 <div class="row">
 
-    <h3>Lesson code: <%= @lesson.lesson_code %></h3>
+    <h3>Lesson: <%= @lesson.lesson_code %></h3>
     <h4>Homeworks for this lesson</h2>
       <table>
         <thead>
@@ -22,7 +22,7 @@
               <td><%= homework.subject %></td>
               <td><%= homework.start_time.strftime("%Y/%m/%d") %></td>
               <td><%= homework.end_time.strftime("%Y/%m/%d") %></td>
-              <td><%= link_to 'Show', homework %></td>
+              <td><%= link_to 'Show', homework,  {:class => 'button'} %></td>
             </tr>
           <% end %>
         </tbody>
@@ -30,7 +30,5 @@
 
   <br>
   <br>
-  <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-  <%= link_to 'Back', lessons_path %>
 
 </div>
