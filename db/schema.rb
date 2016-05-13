@@ -53,7 +53,8 @@ ActiveRecord::Schema.define(version: 20160512105919) do
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.integer  "school_number"
-    t.integer  "is_teacher"
+    t.integer  "is_teacher",             default: 0,  null: false
+    t.integer  "is_admin",               default: 0,  null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

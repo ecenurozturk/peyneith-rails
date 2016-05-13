@@ -1,32 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-  <h3>Lesson code: <%= @lesson.lesson_code %></h3>
-  <h4>Homeworks for this lesson</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Lesson</th>
-          <th>Subject</th>
-          <th>Start time</th>
-          <th>End time</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+<div class="row">
 
-      <tbody>
-        <% @lesson.homeworks.each do |homework| %>
+    <h3>Lesson code: <%= @lesson.lesson_code %></h3>
+    <h4>Homeworks for this lesson</h2>
+      <table>
+        <thead>
           <tr>
-            <td><%= homework.lesson.lesson_code %></td>
-            <td><%= homework.subject %></td>
-            <td><%= homework.start_time.strftime("%Y/%m/%d") %></td>
-            <td><%= homework.end_time.strftime("%Y/%m/%d") %></td>
-            <td><%= link_to 'Show', homework %></td>
+            <th>Lesson</th>
+            <th>Subject</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-<br>
-<br>
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+        <tbody>
+          <% @lesson.homeworks.each do |homework| %>
+            <tr>
+              <td><%= homework.lesson.lesson_code %></td>
+              <td><%= homework.subject %></td>
+              <td><%= homework.start_time.strftime("%Y/%m/%d") %></td>
+              <td><%= homework.end_time.strftime("%Y/%m/%d") %></td>
+              <td><%= link_to 'Show', homework %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+  <br>
+  <br>
+  <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+  <%= link_to 'Back', lessons_path %>
+
+</div>

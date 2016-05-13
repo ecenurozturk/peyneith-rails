@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lesson:</strong>
-  <%= @homework.lesson.lesson_code %>
-</p>
+  <p>
+    <strong>Lesson:</strong>
+    <%= @homework.lesson.lesson_code %>
+  </p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @homework.subject %>
-</p>
+  <p>
+    <strong>Subject:</strong>
+    <%= @homework.subject %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @homework.content %>
-</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @homework.content %>
+  </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @homework.start_time %>
-</p>
+  <p>
+    <strong>Start time:</strong>
+    <%= @homework.start_time %>
+  </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @homework.end_time %>
-</p>
+  <p>
+    <strong>End time:</strong>
+    <%= @homework.end_time %>
+  </p>
 
-<%= link_to 'Edit', edit_homework_path(@homework) %> |
-<%= link_to 'Back', homeworks_path %>
+  <%= link_to 'Edit', edit_homework_path(@homework) %> |
+  <%= link_to 'Back', homeworks_path %>
+
+</div>
