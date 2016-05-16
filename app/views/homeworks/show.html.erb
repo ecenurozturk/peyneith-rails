@@ -1,15 +1,12 @@
 <div class="row">
   <p id="notice"><%= notice %></p>
 
-  <p>
+  <h2>
     <strong>Lesson:</strong>
     <%= @homework.lesson.lesson_code %>
-  </p>
+  </h2>
 
-  <p>
-    <strong>Subject:</strong>
-    <%= @homework.subject %>
-  </p>
+  <h2>Subject: <%= @homework.subject %> </h2>
 
   <p>
     <strong>Content:</strong>
@@ -18,15 +15,13 @@
 
   <p>
     <strong>Start time:</strong>
-    <%= @homework.start_time %>
+    <%= @homework.start_time.strftime("%Y/%m/%d")%>
   </p>
 
   <p>
     <strong>End time:</strong>
-    <%= @homework.end_time %>
+    <%= @homework.end_time.strftime("%Y/%m/%d") %>
   </p>
 
-  <%= link_to 'Edit', edit_homework_path(@homework) %> |
-  <%= link_to 'Back', homeworks_path %>
 
 </div>
