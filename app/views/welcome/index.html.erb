@@ -1,6 +1,6 @@
   <div class="row">
   <% if Student.where(school_number: current_user.school_number).any? %>
-  <h2>Welcome <%= Student.find_by(school_number: current_user.school_number).name %>!</h2>
+  <h2>Welcome <%= current_user.name %>!</h2>
   Your Student Number: <%= current_user.school_number %>
   <h3>Your Lessons</h3>
   <table>
@@ -24,5 +24,29 @@
       <% end %>
     </tbody>
   </table>
+  <% else %>
+    <h2>Welcome <%= current_user.name %></h2>
+    <h3>Your Lessons</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Lesson code</th>
+          <th>Teacher</th>
+          <th>Student Count</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @lessons.each do |lesson| %>
+          <tr>
+            <td><%= lesson.lesson_code %></td>
+            <td><%= lesson.teacher_name %></td>
+            <td><%= lesson.students.count %></td>
+            <td><%= link_to 'Show', lesson,  {:class => 'button'} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   <% end %>
 </div>

@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
     if @student == nil
-      @lessons = nil
+      @lessons = Lesson.where(teacher_name: current_user.name)
     else
       @lessons = @student.lessons
     end
