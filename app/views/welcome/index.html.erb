@@ -10,6 +10,7 @@
         <th>Teacher</th>
         <th>Student Count</th>
         <th>Homeworks</th>
+        <th>Completed Homeworks</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -21,6 +22,7 @@
           <td><%= lesson.teacher_name %></td>
           <td><%= lesson.students.count %></td>
           <td><%= lesson.homeworks.count %></td>
+          <td><%= lesson.homeworks.count - lesson.homeworks.where(completed_at: nil).count %> </td>
           <td><%= link_to 'Show', lesson,  {:class => 'button'} %></td>
         </tr>
       <% end %>
@@ -36,6 +38,7 @@
           <th>Teacher</th>
           <th>Student Count</th>
           <th>Homeworks</th>
+          <th>Completed Homeworks</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -47,6 +50,7 @@
             <td><%= lesson.teacher_name %></td>
             <td><%= lesson.students.count %></td>
             <td><%= lesson.homeworks.count %></td>
+            <td><%= lesson.homeworks.count - lesson.homeworks.where(completed_at: nil).count %> </td>
             <td><%= link_to 'Show', lesson,  {:class => 'button'} %></td>
           </tr>
         <% end %>
