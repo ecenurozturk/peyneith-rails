@@ -22,6 +22,11 @@
     <strong>End time:</strong>
     <%= @homework.end_time.strftime("%Y/%m/%d") %>
   </p>
+  <% if @homework.completed_at? %>
+    <%= link_to "Complete", "#", {:class => 'disabled button'}%>
+  <% else %>
+    <%= link_to "Complete", complete_homework_path,{ method: :patch, :class => 'button'}%>
+  <% end %>
 
 
 </div>

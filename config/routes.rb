@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :homeworks
+  patch 'homeworks/complete/:id' => 'homeworks#complete', as: 'complete_homework'
   resources :students
   resources :lessons
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,5 @@
 class HomeworksController < ApplicationController
-  before_action :set_homework, only: [:show, :edit, :update, :destroy]
+  before_action :set_homework, only: [:show, :edit, :update, :destroy, :complete]
 
   def index
     @homeworks = Homework.all
@@ -36,6 +36,11 @@ class HomeworksController < ApplicationController
   def destroy
     @homework.destroy
     redirect_to homeworks_url, notice: 'Homework was successfully destroyed.'
+  end
+
+  def complete
+    @homework.update(completed_at: Time.now)
+    redirect_to @homework, notice: 'Homework completed successfully.'
   end
 
   private

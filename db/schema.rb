@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516142927) do
+ActiveRecord::Schema.define(version: 20160517013203) do
 
   create_table "homeworks", force: :cascade do |t|
     t.integer  "lesson_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160516142927) do
     t.text     "content"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.date     "completed_at"
   end
 
   add_index "homeworks", ["lesson_id"], name: "index_homeworks_on_lesson_id"
