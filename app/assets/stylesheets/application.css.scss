@@ -20,61 +20,17 @@
 @import 'foundation_and_overrides';
 @import 'trix';
 
-.a {
-  padding: 0;
+.top-bar{
+  .top-bar-title{
+    a:hover{
+      background-color: transparent !important;
+    }
+  }
 }
 
 a:visited {
      color: #FFF !important;
 }
-
-.footer {
+.footer{
   background-color: #2199E8;
-  text-align: center;
-  font-size: 1.2rem;
-
-  .social a {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background-color: #8CADC1;
-    border-radius: 2px;
-    font-size: 1.5rem;
-    color: #fff;
-    text-align: center;
-    line-height: 2rem;
-    margin: 0 3px 0 0;
-  }
-
-  .footer-links a {
-    list-style: none;
-    font-weight: normal;
-    color: #fff;
-    margin: 0;
-    font-size: 0.875rem;
-
-    &::after {
-      content: "•";
-      padding: 0 0.2rem 0 0.4rem;
-    }
-
-    &:last-child::after {
-      content: "";
-      padding: 0 0.4rem 0 0.8rem;
-    }
-  }
-
-  @media only screen and (min-width: 40.063em) {
-    padding: 1rem;
-
-    p {
-      text-align: left;
-    }
-
-    .social {
-      text-align: left;
-      margin: 0;
-    }
-
-  }
 }

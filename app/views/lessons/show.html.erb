@@ -7,7 +7,6 @@
       <table>
         <thead>
           <tr>
-            <th>Lesson</th>
             <th>Subject</th>
             <th>Start time</th>
             <th>End time</th>
@@ -18,7 +17,6 @@
         <tbody>
           <% @lesson.homeworks.each do |homework| %>
             <tr>
-              <td><%= homework.lesson.lesson_code %></td>
               <td><%= homework.subject %></td>
               <td><%= homework.start_time.strftime("%Y/%m/%d") %></td>
               <td><%= homework.end_time.strftime("%Y/%m/%d") %></td>
