@@ -39,7 +39,7 @@ class HomeworksController < ApplicationController
   end
 
   def complete
-    @homework.update(completed_at: Time.now)
+    Completed.create(user_id: current_user.id, homework_id: @homework.id, completed_at: Date.today)
     redirect_to @homework, notice: 'Homework completed successfully.'
   end
 

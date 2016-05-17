@@ -21,7 +21,7 @@
               <td><%= homework.subject %></td>
               <td><%= homework.start_time.strftime("%Y/%m/%d") %></td>
               <td><%= homework.end_time.strftime("%Y/%m/%d") %></td>
-              <td><%= homework.completed_at?.to_s.capitalize %></td>
+              <td><%= Completed.where(user_id: current_user.id, homework_id: homework.id).any?.to_s.capitalize %></td>
               <td><%= link_to 'Show', homework,  {:class => 'button'} %></td>
             </tr>
           <% end %>
