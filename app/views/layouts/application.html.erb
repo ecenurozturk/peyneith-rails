@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Peyneith Homework System" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -34,12 +34,11 @@
                 <li>&nbsp;</li>
               <% end %>
               <li><%= link_to "My Profile", edit_user_registration_path(current_user), {:class => 'success button'} %></li>
-              <li>&nbsp;</li>
+              <li style="background-color: rgba(33, 153, 232, 0.44);">&nbsp;</li>
               <li><%= link_to "Log Out",destroy_user_session_path, {:class => 'alert button', :method => 'DELETE'} %></li>
             <% else %>
               <li><%= link_to "Sign In", new_user_session_path, {:class => 'button'} %></li>
             <% end %>
-            <li>&nbsp;</li>
           </ul>
         </div>
       </div>

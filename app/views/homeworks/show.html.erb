@@ -1,31 +1,43 @@
 <div class="row">
-  <p id="notice"><%= notice %></p>
 
-  <h2>
-    <strong>Lesson:</strong>
-    <%= @homework.lesson.lesson_code %>
-  </h2>
+  <div class="large-6 large-centered columns" style="text-align: center;">
+    <h3>
+      <strong>Lesson:</strong>
+      <%= @homework.lesson.lesson_code %>
+    </h3>
 
-  <h2>Subject: <%= @homework.subject %> </h2>
+    <h5>Subject: <%= @homework.subject %> </h5>
 
-  <p>
-    <strong>Content:</strong>
     <%= raw @homework.content %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Start time:</strong>
-    <%= @homework.start_time.strftime("%Y/%m/%d")%>
-  </p>
+  <div class="large-6 large-centered columns" style="text-align: center;">
 
-  <p>
-    <strong>End time:</strong>
-    <%= @homework.end_time.strftime("%Y/%m/%d") %>
-  </p>
+
+      <div class="large-6 columns">
+        <p>
+          <strong>Start time:</strong>
+          <%= @homework.start_time.strftime("%Y/%m/%d")%>
+        </p>
+      </div>
+
+      <div class="large-6 columns">
+        <p>
+          <strong>End time:</strong>
+          <%= @homework.end_time.strftime("%Y/%m/%d") %>
+        </p>
+
+      </div>
+
+  </div>
+
+
   <%= link_to "Back", :back, {:class => 'button'} %>
-  <% if Completed.where(user_id: current_user.id, homework_id: @homework.id).any? %>
-    <%= link_to "Already Completed", "#", {:class => 'disabled button'}%>
-  <% else %>
-    <%= link_to "Complete", complete_homework_path,{ method: :patch, :class => 'button'}%>
+  <% if current_user.is_teacher != 1 %>
+    <% if Completed.where(user_id: current_user.id, homework_id: @homework.id).any? %>
+      <%= link_to "Already Completed", "#", {:class => 'disabled button'}%>
+    <% else %>
+      <%= link_to "Complete", complete_homework_path,{ method: :patch, :class => 'button'}%>
+    <% end %>
   <% end %>
 </div>
