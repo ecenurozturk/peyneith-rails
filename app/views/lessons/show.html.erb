@@ -24,10 +24,10 @@
               <td><%= homework.subject %></td>
               <td><%= homework.start_time.strftime("%Y/%m/%d") %></td>
               <td><%= homework.end_time.strftime("%Y/%m/%d") %></td>
+              <td><%= Completed.where(homework_id: homework.id).count %></td>
               <% if current_user.is_teacher != 1 %>
                 <td><%= Completed.where(user_id: current_user.id, homework_id: homework.id).any?.to_s.capitalize %></td>
               <% end %>
-              <td><%= Completed.where(homework_id: homework.id).count %></td>
               <td><%= link_to 'Show', homework,  {:class => 'button'} %></td>
             </tr>
           <% end %>

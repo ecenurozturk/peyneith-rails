@@ -1,19 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+  <div class="large-6 large-centered columns">
+    <canvas id="myChart" width="200" height="200"></canvas>
+  </div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @student.age %>
-</p>
+  <script>
 
-<p>
-  <strong>Degree:</strong>
-  <%= @student.degree %>
-</p>
+  var ctx = document.getElementById("myChart").getContext("2d");
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: [
+            <% @completeds.each do |completed| %>
+              "<%= Homework.find(completed.homework_id).lesson.lesson_code %>",
+            <% end %>
+          ],
+          datasets: [{
+              label: '# of Homeworks Completed',
+              data: [
+                <% Student.find_by(school_number: current_user.school_number).lessons.each do |lesson| %>
+                <% count = 0 %>
+                  <% lesson.homeworks.each do |homework| %>
+                    <% if Completed.where(user_id: current_user.id, homework_id: homework.id).any? %>
+                      <% count = count + 1 %>
+                    <% end %>
+                  <% end %>
+                  "<%= count %>",
+                <% end %>
+              ]
+          }]
+      }
+  });
+  </script>
+</div>
 
-<%= link_to 'Edit', edit_student_path(@student),  {:class => 'button'} %> |
-<%= link_to 'Back', students_path,  {:class => 'button'} %>
+<%= link_to 'Back', root_path,  {:class => 'button'} %>

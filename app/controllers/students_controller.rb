@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
   end
 
   def show
+    @completeds = Completed.where(user_id: current_user.id)
   end
 
   def new

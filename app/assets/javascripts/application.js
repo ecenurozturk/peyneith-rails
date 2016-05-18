@@ -16,5 +16,6 @@
 //= require trix
 //= require turbolinks
 //= require_tree .
+//= require Chart
 
 $(function(){ $(document).foundation(); });
