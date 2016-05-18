@@ -30,6 +30,12 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
+    config.model 'Lesson' do
+      object_label_method do
+        :lesson_code
+      end
+    end
+
     ## With an audit adapter, you can add:
     # history_index
     # history_show

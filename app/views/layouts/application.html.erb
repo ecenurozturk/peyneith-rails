@@ -31,7 +31,7 @@
             <% if  user_signed_in? %>
               <% if current_user.is_admin? %>
                 <li><%= link_to "Admin Panel", rails_admin.dashboard_path, {:class => 'button alert'} %></li>
-                <li>&nbsp;</li>
+                <li style="background-color: rgba(33, 153, 232, 0.44);">&nbsp;</li>
               <% end %>
               <li><%= link_to "My Profile", edit_user_registration_path(current_user), {:class => 'success button'} %></li>
               <li style="background-color: rgba(33, 153, 232, 0.44);">&nbsp;</li>
