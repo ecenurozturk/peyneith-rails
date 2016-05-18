@@ -41,7 +41,7 @@
         <%= f.date_select :end_time %>
       </div>
       <%= f.select :lesson_id, Lesson.where(teacher_name: current_user.name).collect {|x| [x.lesson_code, x.id]}, {} %>
-      <%= f.submit "Create", {:class => 'button'} %>
+      <%= f.submit "Submit", {:class => 'button'} %>
   </div>
 
 

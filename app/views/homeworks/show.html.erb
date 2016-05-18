@@ -7,8 +7,9 @@
     </h3>
 
     <h5>Subject: <%= @homework.subject %> </h5>
-
+<br>
     <%= raw @homework.content %>
+    <br><br><br>
   </div>
 
   <div class="large-6 large-centered columns" style="text-align: center;">
@@ -40,5 +41,7 @@
     <% else %>
       <%= link_to "Complete", complete_homework_path,{ method: :patch, :class => 'button'}%>
     <% end %>
+  <% else %>
+    <%= link_to "Edit Homework", edit_homework_path(@homework), {:class => 'button'} %>
   <% end %>
 </div>
